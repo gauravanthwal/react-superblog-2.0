@@ -1,0 +1,10 @@
+body{
+    background-color: #65656510;
+}
+
+.react-quill{
+    height: 30px;
+}
+li{
+    list-style-type: none;
+}
