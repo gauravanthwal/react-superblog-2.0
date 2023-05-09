@@ -8,7 +8,7 @@ import TextEditor from "./TextEditor";
 const CreateBlog = () => {
   const [postImage, setPostImage] = useState("");
   const [title, setTitle] = useState("");
-  const [body, setBody] = useState(RichTextEditor.createEmptyValue());
+  const [body, setBody] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -35,7 +35,7 @@ const App = () => {
         alerts.map((alert) => <Alert key={alert.id} alert={alert} />)}
       <div className="max-w-[1000px] mx-auto">
         <Routes>
-          <Route element={<BlogsPage />} path="/" />
+          <Route element={<HomePage />} path="/" />
           <Route element={<BlogsPage />} path="/blogs" />
           <Route element={<Blog />} path="/blog/:blogId" />
           <Route

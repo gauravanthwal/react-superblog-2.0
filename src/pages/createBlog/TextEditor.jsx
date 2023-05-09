@@ -1,18 +1,34 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import JoditEditor from "jodit-react";
 import RichTextEditor from "react-rte";
+import { Hidden } from "@mui/material";
 
 const TextEditor = ({ onChange }) => {
-  const [value, setValue] = useState(RichTextEditor.createEmptyValue());
+  const [value, setValue] = useState(() => RichTextEditor.createEmptyValue());
 
-  const onChangeEditor = (value) => {
-    setValue(value);
+  const editor = useRef(null);
+
+  const [content, setContent] = useState("");
+
+  const handleUpdate = (event) => {
+    setContent(event);
     if (onChange) {
-      onChange(value.toString("html"));
+      onChange(event);
     }
   };
+  
   return (
     <div>
-      <RichTextEditor value={value} onChange={onChangeEditor} className="min-h-[200px]"/>
+      <JoditEditor
+        ref={editor}
+        value={content}
+        config={{
+          readonly: false,
+          height: 250,
+        }}
+        onBlur={handleUpdate}
+        onChange={()=>{}}
+      />
     </div>
   );
 };

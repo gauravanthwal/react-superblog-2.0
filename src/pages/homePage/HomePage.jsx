@@ -11,7 +11,7 @@ const HomePage = () => {
   }, []);
   return (
     <div className="container p-4">
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center">
         {blogs.length > 0 &&
           blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />)}
       </div>
